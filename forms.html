@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>form registration</title>
+</head>
+<body>
+<!-- This file exists only so Netlify can detect the inquiry form at build time.
+     The live form (in index.html) submits to it in the background. Do not delete. -->
+<form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="inquiry">
+  <input name="bot-field">
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <input type="text" name="org">
+  <textarea name="outcome"></textarea>
+  <input type="text" name="type">
+  <input type="text" name="who">
+  <input type="text" name="timeline">
+  <input type="text" name="budget">
+</form>
+</body>
+</html>
