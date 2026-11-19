@@ -13,7 +13,9 @@ only the `site/` folder (set in `netlify.toml`).
 - `site/` (published at danterry.org)
   - `index.html`: the whole site. Markup and copy are near the top; the page logic (navigation between
     Home / About / Services / Topics / Testimonials / Work, the inquiry form, chip options) is in the
-    `<script type="text/x-dc">` block at the bottom. Phone layout rules are in the `@media` block in
+    `<script type="text/x-dc">` block at the bottom.
+    Pages are linkable by hash (`#about`, `#services`, `#topics`, `#work`); `pageFromHash` and
+    `setTitle` handle this. The Testimonials page exists but is unlinked and still has sample quotes. Phone layout rules are in the `@media` block in
     the first `<style>`; their selectors match inline styles as browsers serialize them
     (`margin: 0px auto`, with spaces), so write new ones the same way.
   - `assets/img/`: images used on the site (`dan-speaking.jpg`, `dan-portrait.jpg`,
@@ -23,7 +25,8 @@ only the `site/` folder (set in `netlify.toml`).
     Do not edit by hand.
   - `forms.html`: hidden copy of the inquiry form so Netlify Forms detects it. Keep its fields in sync
     with the form in `index.html`. Do not delete.
-  - `start`: an older bundled copy of the site, kept so the /start URL still works.
+  - `_redirects`: Netlify redirects (old `/start` page now redirects home).
+  - `assets/img/favicon.svg`: browser tab icon.
 - `design/` (NOT published): the original Claude Design project, "Danterry Coaching Website Redesign".
   - `Dan Terry.dc.html`: the Claude Design source as of Nov 19 2026. `site/index.html` was built from
     it and is now the working source; this copy is reference only.
