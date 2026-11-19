@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "mode": "omelette",
+  "root": "project/",
+  "title": "Danterry Coaching Website Redesign",
+  "entry": "Dan Terry.dc.html",
+  "pages": [
+    {
+      "path": "Dan Terry.dc.html",
+      "title": "Dan Terry",
+      "kind": "page"
+    },
+    {
+      "path": "index.html",
+      "title": "Bundled Page",
+      "kind": "plain"
+    },
+    {
+      "path": "deploy/forms.html",
+      "title": "form registration",
+      "kind": "plain"
+    },
+    {
+      "path": "deploy/index.html",
+      "title": "Bundled Page",
+      "kind": "plain"
+    }
+  ],
+  "migratorVersion": "artifact-migrator (claude-design-backend ed667f7ac9c1)",
+  "createdAt": "2026-11-05T17:45:24.148Z",
+  "source": {
+    "v": 1,
+    "app": "claude-design",
+    "url": "https://claude.ai/design/p/c044a277-193b-4936-91e9-11dce3a96a36",
+    "projectId": "c044a277-193b-4936-91e9-11dce3a96a36",
+    "exportedAt": "2026-11-05T17:45:24.148Z"
+  },
+  "report": {
+    "itemsVersion": 2,
+    "pages": {
+      "total": 4,
+      "ok": 4,
+      "partial": 0,
+      "notMigrated": 0
+    },
+    "items": [],
+    "truncated": 0,
+    "truncatedLeftOut": 0
+  }
+}

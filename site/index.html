@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+<form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden="">
+  <input type="hidden" name="form-name" value="inquiry">
+  <input name="bot-field">
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <input type="text" name="org">
+  <textarea name="outcome"></textarea>
+  <input type="text" name="type">
+  <input type="text" name="who">
+  <input type="text" name="timeline">
+  <input type="text" name="budget">
+</form>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-grotesk-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#F6F2EA;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+@keyframes pageIn{from{transform:translateY(10px);}to{transform:none;}}
+::selection{background:#3F5E72;color:#FCFBF6;}
+input:focus,textarea:focus{outline:none;border-color:#3F5E72!important;box-shadow:0 0 0 3px rgba(176,91,59,0.12);}
+input::placeholder,textarea::placeholder{color:#A89C88;}
+/* --- Responsive: collapse fixed grids + tighten padding on phones --- */
+@media (max-width:760px){
+  section{padding-left:20px!important;padding-right:20px!important;}
+  [style*="margin: 0px auto"]{padding-left:20px!important;padding-right:20px!important;}
+  [style*="padding: 84px"]{padding-top:56px!important;}
+  [style*="padding: 120px 32px"]{padding-top:80px!important;padding-bottom:80px!important;}
+  /* hero + about two-column heros */
+  [style*="1.25fr 0.95fr"]{grid-template-columns:1fr!important;gap:34px!important;}
+  [style*="1fr 0.85fr"]{grid-template-columns:1fr!important;gap:34px!important;}
+  /* service cards */
+  [style*="0.8fr 1.2fr"]{grid-template-columns:1fr!important;gap:24px!important;padding:28px!important;}
+  /* footer columns */
+  [style*="1.4fr 1fr 1fr"]{grid-template-columns:1fr!important;gap:30px!important;}
+  /* topics rows */
+  [style*="grid-template-columns: auto 1fr"]{gap:16px!important;}
+  [style*="rgb(194, 169, 133)"]{font-size:42px!important;}
+  /* testimonials masonry */
+  [style*="column-gap: 24px"]{columns:1!important;}
+  /* form name/email pair */
+  [style*="1fr 1fr; gap: 20px"]{grid-template-columns:1fr!important;}
+  /* un-stick the about sidebar */
+  [style*="position: sticky; top: 100px"]{position:static!important;top:auto!important;}
+}
+@media (max-width:440px){
+  [style*="grid-template-columns: 1fr 1fr"][style*="gap: 10px"]{grid-template-columns:1fr!important;}
+}
+</style>
+</helmet>
+
+
+
+<div style="font-family:'Hanken Grotesk',sans-serif;color:#2C2722;background:#F6F2EA;min-height:100vh;">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(246,242,234,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #E1E1D5;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;min-height:74px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <button onclick="{{ navHome }}" style="background:none;border:none;cursor:pointer;padding:8px 0;display:flex;align-items:baseline;gap:1px;font:500 23px/1 Newsreader,serif;color:#2C2722;letter-spacing:-0.01em;"><em style="font-style:italic;">Dan</em>&nbsp;Terry<span style="color:#3F5E72;font-size:16px;">*</span></button>
+      <nav style="display:flex;align-items:center;gap:2px;flex-wrap:wrap;">
+        <button onclick="{{ navAbout }}" style="background:none;border:none;cursor:pointer;font:500 15px 'Hanken Grotesk',sans-serif;color:#564E44;padding:9px 13px;border-radius:8px;" style-hover="background:#E6E9E1;color:#2C2722;">About</button>
+        <button onclick="{{ navServices }}" style="background:none;border:none;cursor:pointer;font:500 15px 'Hanken Grotesk',sans-serif;color:#564E44;padding:9px 13px;border-radius:8px;" style-hover="background:#E6E9E1;color:#2C2722;">Services</button>
+        <button onclick="{{ navTopics }}" style="background:none;border:none;cursor:pointer;font:500 15px 'Hanken Grotesk',sans-serif;color:#564E44;padding:9px 13px;border-radius:8px;" style-hover="background:#E6E9E1;color:#2C2722;">Topics</button>
+        <button onclick="{{ navWork }}" style="margin-left:8px;display:inline-flex;align-items:center;gap:7px;font:600 15px 'Hanken Grotesk',sans-serif;padding:11px 20px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Work With Me</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HOME ============ -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div style="animation:pageIn .6s ease both;">
+
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 72px;display:grid;grid-template-columns:1.25fr 0.95fr;gap:64px;align-items:center;">
+        <div>
+          <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:26px;">Coaching · Consulting · Speaking</div>
+          <h1 style="font:400 clamp(42px,6vw,76px)/1.05 Newsreader,serif;letter-spacing:-0.015em;color:#2C2722;margin:0;max-width:16ch;">Helping you write your story by being a <em style="font-style:italic;color:#3F5E72;">footnote</em>.</h1>
+          <p style="font:400 19px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:30px 0 0;max-width:46ch;">I work alongside executive leaders, pastors, and teams to build clarity, healthy systems, and people who can carry the vision forward, long after the engagement ends.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;">
+            <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:15px 28px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Start a conversation →</button>
+            <button onclick="{{ navServices }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:15px 28px;border-radius:999px;background:transparent;color:#2C2722;border:1px solid #CFCEBF;cursor:pointer;" style-hover="background:#E6E9E1;">See how I help</button>
+          </div>
+        </div>
+        <div style="aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:#E5E9E2;">
+          <img src="assets/img/dan-speaking.jpg" alt="Dan Terry speaking" style="width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;">
+        </div>
+      </section>
+
+      <section style="border-bottom:1px solid #E1E1D5;background:#EAEDE7 url(&quot;assets/img/texture-light.png&quot;);background-size:512px;">
+        <div style="max-width:1180px;margin:0 auto;padding:30px 32px;display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;">
+          <span style="font:500 14px 'Hanken Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9A8F7C;">Who I work with</span>
+          <span style="font:400 18px/1.5 Newsreader,serif;color:#464037;">Executive pastors · Senior church leaders · Nonprofit executives · CEOs &amp; founders · Leadership teams</span>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 40px;">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;"><span style="font:500 22px Newsreader,serif;color:#3F5E72;">¹</span><span style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;">The five pillars</span></div>
+        <h2 style="font:400 clamp(30px,4vw,46px)/1.1 Newsreader,serif;color:#2C2722;margin:0 0 8px;max-width:20ch;letter-spacing:-0.01em;">Where the work actually happens.</h2>
+        <p style="font:400 18px/1.6 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 46px;max-width:52ch;">Every engagement touches one or more of these five areas, the load-bearing walls of a healthy organization.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;">
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:30px;">
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">01</div>
+            <h3 style="font:700 19px 'Hanken Grotesk',sans-serif;color:#2C2722;margin:20px 0 9px;">Organizational Clarity</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0;">Culture, vision, mission, structure, and formation at the executive level.</p>
+          </div>
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:30px;">
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">02</div>
+            <h3 style="font:700 19px 'Hanken Grotesk',sans-serif;color:#2C2722;margin:20px 0 9px;">Leadership Systems</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0;">Systems that deliver vision, pipelines, policies, procedures, and operational frameworks.</p>
+          </div>
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:30px;">
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">03</div>
+            <h3 style="font:700 19px 'Hanken Grotesk',sans-serif;color:#2C2722;margin:20px 0 9px;">Team Architecture</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0;">Building, recruiting, designing, and sustaining genuinely healthy teams.</p>
+          </div>
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:30px;">
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">04</div>
+            <h3 style="font:700 19px 'Hanken Grotesk',sans-serif;color:#2C2722;margin:20px 0 9px;">Executive Communication</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0;">Communicating at leadership level, vision casting and presenting to boards and staff.</p>
+          </div>
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:30px;">
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">05</div>
+            <h3 style="font:700 19px 'Hanken Grotesk',sans-serif;color:#2C2722;margin:20px 0 9px;">Leader Development</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0;">Coaching others, leading leaders, and developing the next tier down.</p>
+          </div>
+          <div style="background:#3B4233 url(&quot;assets/img/texture-dark.png&quot;);background-size:512px;border:1px solid #2F352A;border-radius:12px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;">
+            <p style="font:400 22px/1.35 Newsreader,serif;color:#F6F2EA;margin:0;font-style:italic;">The goal isn't dependence on me, it's strength that stays after I'm gone.</p>
+            <button onclick="{{ navTopics }}" style="align-self:flex-start;margin-top:24px;background:none;border:none;cursor:pointer;font:600 15px 'Hanken Grotesk',sans-serif;color:#A7BE93;padding:0;" style-hover="color:#F6F2EA;">Explore the pillars →</button>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:62px 32px 84px;">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;"><span style="font:500 22px Newsreader,serif;color:#3F5E72;">²</span><span style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;">Three ways to work together</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:14px;">
+          <button onclick="{{ navServices }}" style="text-align:left;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:34px 30px;cursor:pointer;" style-hover="border-color:#3F5E72;">
+            <h3 style="font:400 27px Newsreader,serif;color:#2C2722;margin:0 0 12px;">1:1 Coaching</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0 0 18px;">For senior leaders, executive pastors, and CEOs carrying weight that's hard to carry alone.</p>
+            <span style="font:600 14px 'Hanken Grotesk',sans-serif;color:#3F5E72;">Learn more →</span>
+          </button>
+          <button onclick="{{ navServices }}" style="text-align:left;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:34px 30px;cursor:pointer;" style-hover="border-color:#3F5E72;">
+            <h3 style="font:400 27px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Consulting</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0 0 18px;">For organizations, churches, and nonprofits ready to rebuild clarity across the whole team.</p>
+            <span style="font:600 14px 'Hanken Grotesk',sans-serif;color:#3F5E72;">Learn more →</span>
+          </button>
+          <button onclick="{{ navServices }}" style="text-align:left;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:34px 30px;cursor:pointer;" style-hover="border-color:#3F5E72;">
+            <h3 style="font:400 27px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Speaking</h3>
+            <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#6B6258;margin:0 0 18px;">For conferences, leadership days, retreats, and church staff days that need to land.</p>
+            <span style="font:600 14px 'Hanken Grotesk',sans-serif;color:#3F5E72;">Learn more →</span>
+          </button>
+        </div>
+      </section>
+
+      <section style="background:#3B4233 url(&quot;assets/img/texture-dark.png&quot;);background-size:512px;">
+        <div style="max-width:900px;margin:0 auto;padding:90px 32px;text-align:center;">
+          <div style="font:500 40px Newsreader,serif;color:#A7BE93;line-height:0.5;">“</div>
+          <p style="font:400 clamp(26px,3.6vw,38px)/1.32 Newsreader,serif;font-style:italic;color:#F6F2EA;margin:18px 0 26px;">Dan has a rare gift for making the complicated feel simple and the overwhelming feel possible. Our leadership team is healthier because of the work we did together.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;letter-spacing:.06em;color:#A7BE93;">Joel Ramsey, Lead Pastor · <span style="color:#9A8F7C;">Citipointe Nashville</span></div>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:90px 32px;text-align:center;">
+        <h2 style="font:400 clamp(30px,4.4vw,50px)/1.12 Newsreader,serif;color:#2C2722;margin:0 auto 18px;max-width:18ch;letter-spacing:-0.01em;">Let's talk about what you're building.</h2>
+        <p style="font:400 18px/1.6 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 auto 34px;max-width:48ch;">No pitch, no pressure. Tell me where you are and what you're trying to do, I'll tell you honestly whether I can help.</p>
+        <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 34px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Work With Me →</button>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <!-- ============ ABOUT ============ -->
+    <sc-if value="{{ isAbout }}">
+    <div style="animation:pageIn .6s ease both;">
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 64px;display:grid;grid-template-columns:1fr 0.85fr;gap:60px;align-items:start;">
+        <div>
+          <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:24px;">About Dan</div>
+          <h1 style="font:400 clamp(36px,5vw,62px)/1.08 Newsreader,serif;color:#2C2722;margin:0 0 28px;letter-spacing:-0.015em;max-width:16ch;">Three decades of helping leaders build what lasts.</h1>
+          <p style="font:400 19px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 20px;">Dan Terry has spent his career inside the rooms where the hardest decisions get made, leading teams, shaping culture, and walking with executives through seasons of growth, transition, and pressure.</p>
+          <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 20px;">His work spans the church, nonprofit, and corporate-adjacent worlds. That range is the point: the principles of healthy leadership don't change when the org chart does. Vision still needs clarity. Teams still need architecture. Leaders still need someone in their corner who will tell them the truth.</p>
+          <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;">He believes the best leaders give their work away, building systems and people strong enough to outlast them. That conviction shapes every engagement: the goal is never dependence, it's durability.</p>
+        </div>
+        <div style="position:sticky;top:100px;display:flex;flex-direction:column;gap:18px;">
+          <div style="aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#E5E9E2;">
+            <img src="assets/img/dan-portrait.jpg" alt="Dan Terry" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+          </div>
+          <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:12px;padding:24px;">
+            <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C;margin-bottom:12px;">At a glance</div>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;">
+              <li style="font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#564E44;">Executive coaching &amp; advising</li>
+              <li style="font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#564E44;">Church, nonprofit &amp; corporate</li>
+              <li style="font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#564E44;">Team &amp; org-wide consulting</li>
+              <li style="font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#564E44;">Keynote &amp; conference speaking</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#EAEDE7 url(&quot;assets/img/texture-light.png&quot;);background-size:512px;border-top:1px solid #E1E1D5;border-bottom:1px solid #E1E1D5;">
+        <div style="max-width:1180px;margin:0 auto;padding:74px 32px;">
+          <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:34px;">What I believe about leadership</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;">
+            <div>
+              <h3 style="font:400 24px Newsreader,serif;color:#2C2722;margin:0 0 10px;">Clarity is kindness.</h3>
+              <p style="font:400 16px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;">Most organizational pain is unresolved ambiguity. Naming things clearly is one of the most generous things a leader can do.</p>
+            </div>
+            <div>
+              <h3 style="font:400 24px Newsreader,serif;color:#2C2722;margin:0 0 10px;">Health beats heroics.</h3>
+              <p style="font:400 16px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;">Sustainable results come from healthy systems and teams, not from any one leader's willpower.</p>
+            </div>
+            <div>
+              <h3 style="font:400 24px Newsreader,serif;color:#2C2722;margin:0 0 10px;">Build to be left.</h3>
+              <p style="font:400 16px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;">The measure of leadership is what stands after you step away. I help you build for that day from the start.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:900px;margin:0 auto;padding:80px 32px;text-align:center;">
+        <h2 style="font:400 clamp(28px,4vw,42px)/1.15 Newsreader,serif;color:#2C2722;margin:0 0 28px;">Curious whether we'd work well together?</h2>
+        <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 34px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Start a conversation →</button>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ============ SERVICES ============ -->
+    <sc-if value="{{ isServices }}">
+    <div style="animation:pageIn .6s ease both;">
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 50px;">
+        <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:24px;">Services</div>
+        <h1 style="font:400 clamp(36px,5vw,62px)/1.08 Newsreader,serif;color:#2C2722;margin:0 0 22px;letter-spacing:-0.015em;max-width:18ch;">Three ways to work together.</h1>
+        <p style="font:400 19px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:54ch;">Every engagement is shaped to your context. Pricing is by inquiry, tell me what you're after and I'll quote it honestly.</p>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:0 32px 30px;display:flex;flex-direction:column;gap:24px;">
+        <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:16px;padding:48px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;">
+          <div>
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">01</div>
+            <h2 style="font:400 34px Newsreader,serif;color:#2C2722;margin:16px 0 10px;">1:1 Coaching</h2>
+            <p style="font:400 15px/1.5 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0;">Individuals · Senior leaders · Executive pastors · CEOs</p>
+          </div>
+          <div>
+            <p style="font:400 18px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 22px;">A confidential, ongoing relationship for the leader carrying weight that's hard to carry alone. We work on the real things, decisions, people, communication, and the inner life of leadership, at a pace that fits your season.</p>
+            <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C;margin-bottom:12px;">What it looks like</div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Regular 1:1 sessions</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Between-session access</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Real decisions, real time</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Total confidentiality</li>
+            </ul>
+            <button onclick="{{ navWork }}" style="margin-top:26px;font:600 15px 'Hanken Grotesk',sans-serif;color:#3F5E72;background:none;border:none;cursor:pointer;padding:0;" style-hover="color:#33505F;">Inquire about coaching →</button>
+          </div>
+        </div>
+
+        <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:16px;padding:48px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;">
+          <div>
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">02</div>
+            <h2 style="font:400 34px Newsreader,serif;color:#2C2722;margin:16px 0 10px;">Consulting</h2>
+            <p style="font:400 15px/1.5 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0;">Organizations · Churches · Nonprofits · Whole-team engagements</p>
+          </div>
+          <div>
+            <p style="font:400 18px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 22px;">A focused engagement to rebuild clarity, systems, and team health across your organization. We diagnose what's actually going on, design the structure you need, and stay close enough to make the change stick.</p>
+            <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C;margin-bottom:12px;">Common engagements</div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Org &amp; structure design</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Vision &amp; mission clarity</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Leadership pipelines</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Team health &amp; alignment</li>
+            </ul>
+            <button onclick="{{ navWork }}" style="margin-top:26px;font:600 15px 'Hanken Grotesk',sans-serif;color:#3F5E72;background:none;border:none;cursor:pointer;padding:0;" style-hover="color:#33505F;">Inquire about consulting →</button>
+          </div>
+        </div>
+
+        <div style="background:#FCFBF6;border:1px solid #E6E5DA;border-radius:16px;padding:48px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;">
+          <div>
+            <div style="font:500 30px/1 Newsreader,serif;color:#7E6248;">03</div>
+            <h2 style="font:400 34px Newsreader,serif;color:#2C2722;margin:16px 0 10px;">Speaking</h2>
+            <p style="font:400 15px/1.5 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0;">Conferences · Leadership days · Retreats · Church staff days</p>
+          </div>
+          <div>
+            <p style="font:400 18px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 22px;">Talks and sessions that respect your people's intelligence and their time. Whether it's a keynote or a working session with your team, I tailor the content to your moment, and leave them with something they can actually use on Monday.</p>
+            <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C;margin-bottom:12px;">Formats</div>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Keynotes</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Half &amp; full-day intensives</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Staff &amp; team days</li>
+              <li style="font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#564E44;">Retreat sessions</li>
+            </ul>
+            <button onclick="{{ navWork }}" style="margin-top:26px;font:600 15px 'Hanken Grotesk',sans-serif;color:#3F5E72;background:none;border:none;cursor:pointer;padding:0;" style-hover="color:#33505F;">Inquire about speaking →</button>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:900px;margin:0 auto;padding:70px 32px 84px;text-align:center;">
+        <p style="font:400 16px/1.6 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0 0 18px;">Not sure which fits? That's a fine place to start.</p>
+        <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 34px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Tell me what you need →</button>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ============ TOPICS ============ -->
+    <sc-if value="{{ isTopics }}">
+    <div style="animation:pageIn .6s ease both;">
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 56px;">
+        <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:24px;">Topics &amp; Areas of Expertise</div>
+        <h1 style="font:400 clamp(36px,5vw,62px)/1.08 Newsreader,serif;color:#2C2722;margin:0 0 22px;letter-spacing:-0.015em;max-width:18ch;">The five pillars, up close.</h1>
+        <p style="font:400 19px/1.65 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:54ch;">These are the areas I return to again and again, in coaching, consulting, and from the stage. They're also the best map of what a healthy organization needs.</p>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:0 32px 40px;display:flex;flex-direction:column;">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;padding:40px 0;border-top:1px solid #E1E1D5;align-items:start;">
+          <div style="font:400 64px/1 Newsreader,serif;color:#C2A985;">01</div>
+          <div>
+            <h2 style="font:400 32px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Organizational Clarity</h2>
+            <p style="font:400 17px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:62ch;">Culture, vision, mission, structure, and formation at the executive level. We get specific about who you are, where you're going, and how the organization is actually shaped to get there, so the whole team is pulling in the same direction.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;padding:40px 0;border-top:1px solid #E1E1D5;align-items:start;">
+          <div style="font:400 64px/1 Newsreader,serif;color:#C2A985;">02</div>
+          <div>
+            <h2 style="font:400 32px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Leadership Systems</h2>
+            <p style="font:400 17px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:62ch;">Systems that deliver vision, pipelines, policies, procedures, and operational frameworks. Vision without systems is just hope. We build the mechanisms that turn intention into something that runs reliably without you in the room.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;padding:40px 0;border-top:1px solid #E1E1D5;align-items:start;">
+          <div style="font:400 64px/1 Newsreader,serif;color:#C2A985;">03</div>
+          <div>
+            <h2 style="font:400 32px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Team Architecture</h2>
+            <p style="font:400 17px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:62ch;">Building, recruiting, designing, and sustaining genuinely healthy teams. The right people in the right seats, clear about how they work together, and a culture that keeps them. We design teams that can carry weight.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;padding:40px 0;border-top:1px solid #E1E1D5;align-items:start;">
+          <div style="font:400 64px/1 Newsreader,serif;color:#C2A985;">04</div>
+          <div>
+            <h2 style="font:400 32px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Executive Communication</h2>
+            <p style="font:400 17px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:62ch;">Communicating at leadership level, vision casting and presenting to boards and staff. How you say it shapes whether it lands. We sharpen the message and the delivery so your most important moments actually move people.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:40px;padding:40px 0;border-top:1px solid #E1E1D5;border-bottom:1px solid #E1E1D5;align-items:start;">
+          <div style="font:400 64px/1 Newsreader,serif;color:#C2A985;">05</div>
+          <div>
+            <h2 style="font:400 32px Newsreader,serif;color:#2C2722;margin:0 0 12px;">Leader Development</h2>
+            <p style="font:400 17px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0;max-width:62ch;">Coaching others, leading leaders, and developing the next tier down. The multiplier of every healthy organization. We build your capacity to grow the leaders around you, so depth, not just you, carries the load.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:900px;margin:0 auto;padding:70px 32px 84px;text-align:center;">
+        <h2 style="font:400 clamp(28px,4vw,42px)/1.15 Newsreader,serif;color:#2C2722;margin:0 0 26px;max-width:20ch;display:inline-block;">Which of these is the one keeping you up at night?</h2>
+        <div><button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 34px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Let's work on it →</button></div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <sc-if value="{{ isTestimonials }}">
+    <div style="animation:pageIn .6s ease both;">
+      <section style="max-width:1180px;margin:0 auto;padding:84px 32px 50px;">
+        <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:24px;">Testimonials</div>
+        <h1 style="font:400 clamp(36px,5vw,62px)/1.08 Newsreader,serif;color:#2C2722;margin:0 0 12px;letter-spacing:-0.015em;max-width:18ch;">In their words.</h1>
+        <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:8px 0 0;">Sample quotes shown below, we'll swap in your real testimonials and attributions.</p>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:0 32px 30px;columns:2;column-gap:24px;">
+        <div style="break-inside:avoid;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:14px;padding:32px;margin-bottom:24px;">
+          <p style="font:400 21px/1.5 Newsreader,serif;font-style:italic;color:#2C2722;margin:0 0 20px;">He made the complicated feel simple and the overwhelming feel possible. Our leadership team is healthier because of the work we did together.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;color:#564E44;">Executive Pastor</div>
+          <div style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;">Multisite church · sample</div>
+        </div>
+        <div style="break-inside:avoid;background:#3B4233 url(&quot;assets/img/texture-dark.png&quot;);background-size:512px;border-radius:14px;padding:32px;margin-bottom:24px;">
+          <p style="font:400 21px/1.5 Newsreader,serif;font-style:italic;color:#F6F2EA;margin:0 0 20px;">Dan asks the question everyone in the room is thinking but no one will say. That's the whole gift.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;color:#A7BE93;">CEO</div>
+          <div style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;">Regional nonprofit · sample</div>
+        </div>
+        <div style="break-inside:avoid;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:14px;padding:32px;margin-bottom:24px;">
+          <p style="font:400 21px/1.5 Newsreader,serif;font-style:italic;color:#2C2722;margin:0 0 20px;">We brought him in to fix a structure problem and left with a healthier culture. Six months on, it's still holding.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;color:#564E44;">Chief Operating Officer</div>
+          <div style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;">Faith-based nonprofit · sample</div>
+        </div>
+        <div style="break-inside:avoid;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:14px;padding:32px;margin-bottom:24px;">
+          <p style="font:400 21px/1.5 Newsreader,serif;font-style:italic;color:#2C2722;margin:0 0 20px;">Our staff still quotes his sessions a year later. He gave them language for things they'd felt but couldn't name.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;color:#564E44;">Lead Pastor</div>
+          <div style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;">Conference host · sample</div>
+        </div>
+        <div style="break-inside:avoid;background:#FCFBF6;border:1px solid #E6E5DA;border-radius:14px;padding:32px;margin-bottom:24px;">
+          <p style="font:400 21px/1.5 Newsreader,serif;font-style:italic;color:#2C2722;margin:0 0 20px;">I've worked with a lot of coaches. Dan is the one who actually changed how I lead.</p>
+          <div style="font:600 14px 'Hanken Grotesk',sans-serif;color:#564E44;">Founder &amp; Executive Director</div>
+          <div style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;">Nonprofit · sample</div>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:30px 32px 20px;">
+        <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9A8F7C;text-align:center;margin-bottom:24px;">A few of the organizations I've served</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;">
+          <div style="height:64px;border-radius:8px;background:repeating-linear-gradient(45deg,#E5E9E2,#E5E9E2 9px,#D6DCD2 9px,#D6DCD2 18px);display:flex;align-items:center;justify-content:center;"><span style="font:500 11px ui-monospace,monospace;color:#9A8F7C;background:#FCFBF6;padding:4px 8px;border-radius:4px;">logo</span></div>
+          <div style="height:64px;border-radius:8px;background:repeating-linear-gradient(45deg,#E5E9E2,#E5E9E2 9px,#D6DCD2 9px,#D6DCD2 18px);display:flex;align-items:center;justify-content:center;"><span style="font:500 11px ui-monospace,monospace;color:#9A8F7C;background:#FCFBF6;padding:4px 8px;border-radius:4px;">logo</span></div>
+          <div style="height:64px;border-radius:8px;background:repeating-linear-gradient(45deg,#E5E9E2,#E5E9E2 9px,#D6DCD2 9px,#D6DCD2 18px);display:flex;align-items:center;justify-content:center;"><span style="font:500 11px ui-monospace,monospace;color:#9A8F7C;background:#FCFBF6;padding:4px 8px;border-radius:4px;">logo</span></div>
+          <div style="height:64px;border-radius:8px;background:repeating-linear-gradient(45deg,#E5E9E2,#E5E9E2 9px,#D6DCD2 9px,#D6DCD2 18px);display:flex;align-items:center;justify-content:center;"><span style="font:500 11px ui-monospace,monospace;color:#9A8F7C;background:#FCFBF6;padding:4px 8px;border-radius:4px;">logo</span></div>
+          <div style="height:64px;border-radius:8px;background:repeating-linear-gradient(45deg,#E5E9E2,#E5E9E2 9px,#D6DCD2 9px,#D6DCD2 18px);display:flex;align-items:center;justify-content:center;"><span style="font:500 11px ui-monospace,monospace;color:#9A8F7C;background:#FCFBF6;padding:4px 8px;border-radius:4px;">logo</span></div>
+        </div>
+      </section>
+
+      <section style="max-width:900px;margin:0 auto;padding:70px 32px 84px;text-align:center;">
+        <h2 style="font:400 clamp(28px,4vw,42px)/1.15 Newsreader,serif;color:#2C2722;margin:0 0 26px;">Ready to write the next chapter?</h2>
+        <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 34px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Work With Me →</button>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ============ WORK WITH ME ============ -->
+    <sc-if value="{{ isWork }}">
+    <div style="animation:pageIn .6s ease both;">
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+      <section style="max-width:760px;margin:0 auto;padding:84px 32px 90px;">
+        <div style="font:600 13px 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3F5E72;margin-bottom:24px;">Work With Me</div>
+        <h1 style="font:400 clamp(36px,5vw,58px)/1.08 Newsreader,serif;color:#2C2722;margin:0 0 20px;letter-spacing:-0.015em;max-width:18ch;">Tell me what you're building.</h1>
+        <p style="font:400 18px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 44px;max-width:52ch;">A few quick questions so I understand the shape of the work before we talk. I read every inquiry personally and usually reply within two business days.</p>
+
+        <form ref="{{ formRef }}" onsubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:36px;">
+
+          <input name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+
+          <div>
+            <label style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:6px;">What kind of engagement?</label>
+            <p style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0 0 14px;">Pick the closest fit, we can refine it together.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;">
+              <sc-for list="{{ engagementTypes }}" as="opt" hint-placeholder-count="3">
+                <button type="button" onclick="{{ opt.select }}" style="{{ opt.style }}">
+                  <span style="font:700 16px 'Hanken Grotesk',sans-serif;display:block;margin-bottom:3px;">{{ opt.label }}</span>
+                  <span style="font:400 13px 'Hanken Grotesk',sans-serif;opacity:0.75;">{{ opt.hint }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <label style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:14px;">Is this for an individual or an organization?</label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <sc-for list="{{ whoOptions }}" as="opt" hint-placeholder-count="2">
+                <button type="button" onclick="{{ opt.select }}" style="{{ opt.style }}">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <label style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:14px;">What's the likely timeline?</label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <sc-for list="{{ timelineOptions }}" as="opt" hint-placeholder-count="3">
+                <button type="button" onclick="{{ opt.select }}" style="{{ opt.style }}">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <label for="outcome" style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:6px;">What outcome are you trying to achieve?</label>
+            <p style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0 0 14px;">A sentence or two is plenty.</p>
+            <textarea id="outcome" name="outcome" rows="4" placeholder="What does success look like for you?" style="width:100%;font:400 16px/1.6 'Hanken Grotesk',sans-serif;color:#2C2722;background:#FCFBF6;border:1px solid #DBDACD;border-radius:12px;padding:16px;resize:vertical;"></textarea>
+          </div>
+
+          <div>
+            <label style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:6px;">Budget range <span style="font-weight:400;color:#9A8F7C;">(optional)</span></label>
+            <p style="font:400 14px 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:0 0 14px;">Helps me recommend the right scope. No wrong answer.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <sc-for list="{{ budgetOptions }}" as="opt" hint-placeholder-count="4">
+                <button type="button" onclick="{{ opt.select }}" style="{{ opt.style }}">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid #E1E1D5;padding-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div>
+              <label for="name" style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:10px;">Your name</label>
+              <input id="name" name="name" type="text" placeholder="First and last" style="width:100%;font:400 16px 'Hanken Grotesk',sans-serif;color:#2C2722;background:#FCFBF6;border:1px solid #DBDACD;border-radius:12px;padding:14px 16px;">
+            </div>
+            <div>
+              <label for="email" style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:10px;">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@organization.org" style="width:100%;font:400 16px 'Hanken Grotesk',sans-serif;color:#2C2722;background:#FCFBF6;border:1px solid #DBDACD;border-radius:12px;padding:14px 16px;">
+            </div>
+            <div style="grid-column:1 / -1;">
+              <label for="org" style="display:block;font:700 16px 'Hanken Grotesk',sans-serif;color:#2C2722;margin-bottom:10px;">Organization <span style="font-weight:400;color:#9A8F7C;">(if applicable)</span></label>
+              <input id="org" name="org" type="text" placeholder="Church, nonprofit, or company" style="width:100%;font:400 16px 'Hanken Grotesk',sans-serif;color:#2C2722;background:#FCFBF6;border:1px solid #DBDACD;border-radius:12px;padding:14px 16px;">
+            </div>
+          </div>
+
+          <button type="submit" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:600 16px 'Hanken Grotesk',sans-serif;padding:16px 36px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Send my inquiry →</button>
+          <p style="font:400 13px/1.5 'Hanken Grotesk',sans-serif;color:#9A8F7C;margin:-16px 0 0;">Your details stay between us. I'll never share or sell your information.</p>
+          <sc-if value="{{ submitError }}" hint-placeholder-val="{{ false }}">
+          <p style="font:400 14px/1.6 'Hanken Grotesk',sans-serif;color:#B05B3B;background:#F7EBE4;border:1px solid #E6C9B8;border-radius:10px;padding:14px 16px;margin:-8px 0 0;">Something went wrong sending your inquiry. Please email me directly at <a href="mailto:dterry@citipointechurch.com" style="color:#B05B3B;font-weight:600;">dterry@citipointechurch.com</a> and I'll get right back to you.</p>
+          </sc-if>
+        </form>
+      </section>
+      </sc-if>
+
+      <sc-if value="{{ submitted }}">
+      <section style="max-width:680px;margin:0 auto;padding:120px 32px;text-align:center;">
+        <div style="font:400 56px Newsreader,serif;color:#3F5E72;line-height:1;">*</div>
+        <h1 style="font:400 clamp(34px,4.6vw,52px)/1.12 Newsreader,serif;color:#2C2722;margin:22px 0 18px;">Thank you, it's on its way to me.</h1>
+        <p style="font:400 19px/1.7 'Hanken Grotesk',sans-serif;color:#5E564B;margin:0 0 36px;">I read every inquiry personally and usually reply within two business days. In the meantime, feel free to keep looking around.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button onclick="{{ navHome }}" style="font:600 15px 'Hanken Grotesk',sans-serif;padding:14px 28px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Back home</button>
+          <button onclick="{{ resetForm }}" style="font:600 15px 'Hanken Grotesk',sans-serif;padding:14px 28px;border-radius:999px;background:transparent;color:#2C2722;border:1px solid #CFCEBF;cursor:pointer;" style-hover="background:#E6E9E1;">Send another inquiry</button>
+        </div>
+      </section>
+      </sc-if>
+    </div>
+    </sc-if>
+
+  </main>
+
+  <footer style="background:#2A2D23;color:#C9C0B2;">
+    <div style="max-width:1180px;margin:0 auto;padding:64px 32px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:1px;font:500 24px Newsreader,serif;color:#F6F2EA;"><em style="font-style:italic;">Dan</em>&nbsp;Terry<span style="color:#3F5E72;font-size:16px;">*</span></div>
+        <p style="font:400 17px/1.6 Newsreader,serif;font-style:italic;color:#9A8F7C;margin:16px 0 0;max-width:30ch;">Helping you write your story by being a footnote.</p>
+      </div>
+      <div>
+        <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7C7264;margin-bottom:16px;">Explore</div>
+        <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start;">
+          <button onclick="{{ navAbout }}" style="background:none;border:none;cursor:pointer;padding:0;font:400 15px 'Hanken Grotesk',sans-serif;color:#C9C0B2;" style-hover="color:#F6F2EA;">About Dan</button>
+          <button onclick="{{ navServices }}" style="background:none;border:none;cursor:pointer;padding:0;font:400 15px 'Hanken Grotesk',sans-serif;color:#C9C0B2;" style-hover="color:#F6F2EA;">Services</button>
+          <button onclick="{{ navTopics }}" style="background:none;border:none;cursor:pointer;padding:0;font:400 15px 'Hanken Grotesk',sans-serif;color:#C9C0B2;" style-hover="color:#F6F2EA;">Topics</button>
+        </div>
+      </div>
+      <div>
+        <div style="font:600 12px 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7C7264;margin-bottom:16px;">Get in touch</div>
+        <p style="font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#C9C0B2;margin:0 0 18px;">The best way to reach me is a quick note about what you're working on.</p>
+        <button onclick="{{ navWork }}" style="display:inline-flex;align-items:center;gap:7px;font:600 14px 'Hanken Grotesk',sans-serif;padding:11px 20px;border-radius:999px;background:#3F5E72;color:#FCFBF6;border:none;cursor:pointer;" style-hover="background:#33505F;">Work With Me →</button>
+      </div>
+    </div>
+    <div style="border-top:1px solid #3C4034;">
+      <div style="max-width:1180px;margin:0 auto;padding:22px 32px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;">
+        <span style="font:400 13px 'Hanken Grotesk',sans-serif;color:#7C7264;">© 2026 Dan Terry · danterry.org</span>
+        <span style="font:400 13px 'Hanken Grotesk',sans-serif;color:#7C7264;">Coaching · Consulting · Speaking</span>
+      </div>
+    </div>
+  </footer>
+
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = {
+    page: "home",
+    submitted: false,
+    sel: { type: "", who: "", timeline: "", budget: "" },
+  };
+
+  go = (page) => {
+    this.setState({ page });
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "auto" });
+  };
+
+  pick = (field, value) => this.setState((s) => ({ sel: { ...s.sel, [field]: value } }));
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.sending) return;
+    this.setState({ sending: true, error: false });
+    const fd = new FormData(this.form);
+    const body = new URLSearchParams();
+    body.append("form-name", "inquiry");
+    for (const [k, v] of fd.entries()) body.append(k, v);
+    Object.entries(this.state.sel).forEach(([k, v]) => body.append(k, v));
+    const done = () => {
+      this.setState({ submitted: true, sending: false });
+      if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "auto" });
+    };
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    })
+      .then((r) => {
+        if (!r.ok) throw new Error("bad status");
+        done();
+      })
+      .catch(() => {
+        // On the live Netlify site a failure is real; in preview there is no
+        // backend, so still show the confirmation so the flow can be demoed.
+        const live = typeof location !== "undefined" && /netlify\.app|citipointe|danterry/.test(location.host);
+        if (live) this.setState({ sending: false, error: true });
+        else done();
+      });
+  };
+
+  resetForm = () => {
+    if (this.form) this.form.reset();
+    this.setState({ submitted: false, error: false, sending: false, sel: { type: "", who: "", timeline: "", budget: "" } });
+  };
+
+  chip(field, value, label, hint) {
+    const active = this.state.sel[field] === value;
+    const base =
+      "text-align:left;cursor:pointer;border-radius:12px;padding:14px 18px;font-family:'Hanken Grotesk',sans-serif;transition:all .15s;";
+    const style = active
+      ? base + "background:#3F5E72;border:1px solid #3F5E72;color:#FCFBF6;"
+      : base + "background:#FCFBF6;border:1px solid #DBDACD;color:#2C2722;";
+    return { label, hint, value, style, select: () => this.pick(field, value) };
+  }
+
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isHome: p === "home",
+      isAbout: p === "about",
+      isServices: p === "services",
+      isTopics: p === "topics",
+      isTestimonials: p === "testimonials",
+      isWork: p === "work",
+
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      submitError: !!this.state.error,
+
+      navHome: () => this.go("home"),
+      navAbout: () => this.go("about"),
+      navServices: () => this.go("services"),
+      navTopics: () => this.go("topics"),
+      navTestimonials: () => this.go("testimonials"),
+      navWork: () => this.go("work"),
+
+      formRef: (el) => (this.form = el),
+      onSubmit: this.onSubmit,
+      resetForm: this.resetForm,
+
+      engagementTypes: [
+        this.chip("type", "coaching", "Coaching", "1:1, ongoing"),
+        this.chip("type", "consulting", "Consulting", "Org or team"),
+        this.chip("type", "speaking", "Speaking", "Event or day"),
+      ],
+      whoOptions: [
+        this.chip("who", "individual", "An individual"),
+        this.chip("who", "organization", "An organization"),
+      ],
+      timelineOptions: [
+        this.chip("timeline", "single", "Single session"),
+        this.chip("timeline", "short", "Short-term project"),
+        this.chip("timeline", "ongoing", "Ongoing relationship"),
+      ],
+      budgetOptions: [
+        this.chip("budget", "under2k", "Under $2k"),
+        this.chip("budget", "2to5k", "$2k – $5k"),
+        this.chip("budget", "5to15k", "$5k – $15k"),
+        this.chip("budget", "discuss", "Let's discuss"),
+      ],
+    };
+  }
+}
+</script>
+
+
+</div></x-dc></body></html>
